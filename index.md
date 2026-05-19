@@ -184,8 +184,6 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and design</p>
     </div>
     
-    <!-- === NEW MASTER'S THESIS BLOCK START === -->
-    <!-- Point the href to the exact markdown file name of your thesis project -->
     <a href="{{ '/projects/masters-thesis/' | relative_url }}" class="thesis-card-featured">
       
       <!-- Left Side: Image (2/3 width) -->
@@ -220,7 +218,6 @@ layout: default
     </a>
     <!-- === NEW MASTER'S THESIS BLOCK END === -->
 
-    <!-- This is your existing 3-project grid. 
     <div class="projects-grid-featured">
       {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
       {% assign all_projects = site.projects | sort: "date" | reverse %}
