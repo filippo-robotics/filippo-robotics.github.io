@@ -157,15 +157,15 @@ layout: default
         <!-- Text & Buttons Block (Right Side) -->
         <div class="hero-info-wrapper">
           <div class="hero-text">
-             <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-             <p class="hero-title">Robotics & Mechatronics</p>
+              <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
+              <p class="hero-title">Robotics & Mechatronics</p>
           </div>
           
           <div class="hero-actions">
             <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
               About
             </a>
-             <a href="mailto:{{ site.email }}" class="btn-secondary">
+              <a href="mailto:{{ site.email }}" class="btn-secondary">
               Contact
             </a>
           </div>
@@ -184,119 +184,123 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and design</p>
     </div>
     
-    <a href="{{ '/projects/masters-thesis/' | relative_url }}" class="thesis-card-featured">
-      
-      <!-- Left Side: Image (2/3 width) -->
-      <div class="thesis-media">
-         <img src="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}" alt="Master's Thesis Preview">
-      </div>
-      
-      <!-- Right Side: Text & Info (1/3 width) -->
-      <div class="thesis-info">
-         
-         <!-- Location / Harvard Flag -->
-         <div class="thesis-location">
-            <i class="fas fa-university"></i> Harvard University
-         </div>
-         
-         <!-- Title -->
-         <h3 class="thesis-title">Simulation-informed Human-In-the-Loop Optimization of a Supernumerary Robotic Limb in Activities of Daily Living</h3>
-         
-         <!-- Brief Description -->
-         <p class="thesis-excerpt">
-            A concise description of your research. Explain the core problem, your mechatronic approach, and the impact of the work conducted.
-         </p>
-         
-         <!-- Keywords / Tags -->
-         <div class="thesis-tags">
-            <span class="thesis-tag">Robotics</span>
-            <span class="thesis-tag">Control Systems</span>
-            <span class="thesis-tag">Kinematics</span>
-         </div>
-         
-      </div>
-    </a>
-    <!-- === NEW MASTER'S THESIS BLOCK END === -->
+<!-- === NEW DYNAMIC MASTER'S THESIS BLOCK START === -->
+  {% assign thesis = site.projects | where: "slug", "masters-thesis" | first %}
+  {% if thesis %}
+  <a href="{{ thesis.url | relative_url }}" class="thesis-card-featured">
 
-    <div class="projects-grid-featured">
-      {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
-      {% assign all_projects = site.projects | sort: "date" | reverse %}
-      {% assign combined_projects = featured_projects | concat: all_projects %}
-      {% assign unique_projects = combined_projects | uniq %}
-      {% for project in unique_projects limit: 9 %}
-        <div class="project-card-featured">
-          <div class="project-media">
-            {% if project.featured_image %}
-              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image">
-            {% elsif project.models.first %}
-              <div class="model-preview-small">
-                <model-viewer 
-                  src="{{ project.models.first.file | relative_url }}"
-                  alt="{{ project.title }}"
-                  camera-controls
-                  auto-rotate
-                  class="preview-model-small">
-                </model-viewer>
-              </div>
-            {% else %}
-              <div class="project-placeholder-small">
-                <i class="fas fa-robot"></i>
-              </div>
-            {% endif %}
-            
-            <div class="project-overlay">
-              <a href="{{ project.url | relative_url }}" class="project-link-overlay">
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          
-          <div class="project-info-featured">
-            <div class="project-categories-small">
-              {% for category in project.categories limit:2 %}
-                <span class="category-tag-small">{{ category }}</span>
-              {% endfor %}
-            </div>
-            
-            <h3 class="project-title-featured">
-              <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-            </h3>
-            
-            <p class="project-excerpt-small">{{ project.description | truncate: 80 }}</p>
-            
-            <div class="project-features-small">
-              {% if project.models %}
-                <span class="feature-badge-small" title="3D Models">
-                  <i class="fas fa-cube"></i>
-                  {{ project.models.size }}
-                </span>
-              {% endif %}
-              
-              {% if project.schematics %}
-                <span class="feature-badge-small" title="Schematics">
-                  <i class="fas fa-microchip"></i>
-                  {{ project.schematics.size }}
-                </span>
-              {% endif %}
-              
-              {% if project.code_files %}
-                <span class="feature-badge-small" title="Code Files">
-                  <i class="fas fa-code"></i>
-                  {{ project.code_files.size }}
-                </span>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+  <!-- Left Side: Image (2/3 width) - Pulled from thesis front matter -->
+  <div class="thesis-media">
+      <img src="{{ thesis.featured_image | relative_url }}" alt="{{ thesis.title }}">
+  </div>
+
+  <!-- Right Side: Text & Info (1/3 width) -->
+  <div class="thesis-info">
     
-    <div class="showcase-actions">
-      <a href="{{ '/projects/' | relative_url }}" class="btn-primary-large">
-        <i class="fas fa-th"></i>
-        View All Projects
-      </a>
+  <!-- Location / Harvard Flag -->
+  <div class="thesis-location">
+    <i class="fas fa-university"></i> Harvard University
+  </div>
+  
+  <!-- Title - Pulled from thesis front matter -->
+  <h3 class="thesis-title">{{ thesis.title }}</h3>
+  
+  <!-- Brief Description - Pulled from thesis front matter -->
+  <p class="thesis-excerpt">
+    {{ thesis.description }}
+  </p>
+  
+  <!-- Keywords / Tags - Loops through categories in thesis front matter -->
+  <div class="thesis-tags">
+    {% for category in thesis.categories %}
+      <span class="thesis-tag">{{ category }}</span>
+    {% endfor %}
+  </div>
+      
+  </div>
+  </a>
+  {% endif %}
+  <!-- === NEW DYNAMIC MASTER'S THESIS BLOCK END === -->
+
+  <div class="projects-grid-featured">
+  {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
+  {% assign all_projects = site.projects | sort: "date" | reverse %}
+  {% assign combined_projects = featured_projects | concat: all_projects %}
+  {% assign unique_projects = combined_projects | uniq %}
+  {% for project in unique_projects limit: 9 %}
+    <div class="project-card-featured">
+      <div class="project-media">
+        {% if project.featured_image %}
+          <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image">
+        {% elsif project.models.first %}
+          <div class="model-preview-small">
+            <model-viewer 
+              src="{{ project.models.first.file | relative_url }}"
+              alt="{{ project.title }}"
+              camera-controls
+              auto-rotate
+              class="preview-model-small">
+            </model-viewer>
+          </div>
+        {% else %}
+          <div class="project-placeholder-small">
+            <i class="fas fa-robot"></i>
+          </div>
+        {% endif %}
+        
+        <div class="project-overlay">
+          <a href="{{ project.url | relative_url }}" class="project-link-overlay">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-info-featured">
+        <div class="project-categories-small">
+          {% for category in project.categories limit:2 %}
+            <span class="category-tag-small">{{ category }}</span>
+          {% endfor %}
+        </div>
+        
+        <h3 class="project-title-featured">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h3>
+        
+        <p class="project-excerpt-small">{{ project.description | truncate: 80 }}</p>
+        
+        <div class="project-features-small">
+          {% if project.models %}
+            <span class="feature-badge-small" title="3D Models">
+              <i class="fas fa-cube"></i>
+              {{ project.models.size }}
+            </span>
+          {% endif %}
+          
+          {% if project.schematics %}
+            <span class="feature-badge-small" title="Schematics">
+              <i class="fas fa-microchip"></i>
+              {{ project.schematics.size }}
+            </span>
+          {% endif %}
+          
+          {% if project.code_files %}
+            <span class="feature-badge-small" title="Code Files">
+              <i class="fas fa-code"></i>
+              {{ project.code_files.size }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
     </div>
+  {% endfor %}
+  </div>
+
+  <div class="showcase-actions">
+  <a href="{{ '/projects/' | relative_url }}" class="btn-primary-large">
+    <i class="fas fa-th"></i>
+    View All Projects
+  </a>
+  </div>
   </div>
 </div>
 
