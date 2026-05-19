@@ -122,7 +122,7 @@ layout: default
   }
 
   .thesis-title {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     margin-top: 0;
     margin-bottom: 1rem;
   }
@@ -209,6 +209,9 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and design</p>
     </div>
     
+    <!-- Subsection Header for Thesis -->
+    <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Master's Thesis</h3>
+
     <!-- === DYNAMIC MASTER'S THESIS BANNER ROW === -->
     {% assign thesis = site.projects | where: "slug", "masters-thesis" | first %}
 
@@ -232,7 +235,7 @@ layout: default
         </div>
         
         <!-- Title -->
-        <h3 class="thesis-title" style="color: #ffffff; font-weight: 700;">
+        <h3 class="thesis-title" style="color: #ffffff; font-weight: 700; margin-bottom: 1rem;">
           {{ thesis.title | default: "Your Master's Thesis Title Here" }}
         </h3>
         
@@ -257,6 +260,9 @@ layout: default
       </div>
     </a>
     <!-- === END OF MASTER'S THESIS BANNER ROW === -->
+
+    <!-- Subsection Header for Other Projects -->
+    <h3 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 600;">Main Academic Projects</h3>
 
     <!-- STANDARD 3-PROJECT ARCHIVE FEATURED GRID -->
     <div class="projects-grid-featured">
