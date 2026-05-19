@@ -7,3 +7,34 @@
 @import "components";
 @import "project";
 @import "responsive";
+
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero-text {
+    text-align: left;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+}
