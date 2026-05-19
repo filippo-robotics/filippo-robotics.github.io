@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Simulation-informed Human-In-the-Loop Optimization of a Supernumerary Robotic Limb in Activities of Daily Living"
+title: "Simulation-Informed Human-in-the Loop Optimization for Supernumerary Robotic Assistance in Activities of Daily Living"
 description: "My master's thesis research conducted at Harvard University focusing on advanced mechatronic systems."
 date: 2026-05-19
 categories: [Robotics, Mechatronics, Computer Vision]
@@ -45,12 +45,12 @@ components:
 
 # Gallery for your thesis defense slides, photos in the lab, or performance graphs
 gallery:
-  - type: "image"
-    file: "/assets/images/projects/thesis/lab_setup.jpg"
-    description: "The experimental hardware setup at Harvard University"
   - type: "video"
-    file: "/assets/images/projects/thesis/experimental_run.mp4"
-    description: "Full trial tracking showing error margins under 1mm"
+    file: "/assets/images/projects/thesis/demo.mp4"
+    description: "Robot in action - Full demonstration video"
+  - type: "image"
+    file: "/assets/images/projects/thesis/featured.jpg"
+    description: "Close-up profile of the hardware assembly"
 ---
 
 ## Thesis Abstract
