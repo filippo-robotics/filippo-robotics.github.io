@@ -200,7 +200,7 @@ layout: default
          </div>
          
          <!-- Title -->
-         <h3 class="thesis-title">Your Master's Thesis Title Here</h3>
+         <h3 class="thesis-title">Simulation-informed Human-In-the-Loop Optimization of a Supernumerary Robotic Limb in Activities of Daily Living</h3>
          
          <!-- Brief Description -->
          <p class="thesis-excerpt">
