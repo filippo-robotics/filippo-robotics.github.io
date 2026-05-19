@@ -17,6 +17,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+safe: true
+
 # Collections
 collections:
   projects:
