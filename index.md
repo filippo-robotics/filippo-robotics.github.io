@@ -59,19 +59,20 @@ layout: default
   .thesis-card-featured {
     display: flex;
     flex-direction: row;
-    background: var(--bg-color-secondary, #1e1e1e); /* Adapts to dark/light mode automatically */
+    background: #A51C30; /* Official Harvard Crimson */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     margin-bottom: 3rem; /* Spacing between this and the 3 smaller projects below */
     text-decoration: none;
-    color: inherit;
+    color: #ffffff; /* High contrast text overlay color */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .thesis-card-featured:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 25px rgba(165, 28, 48, 0.3); /* Tinted crimson shadow drop */
+    color: #ffffff;
   }
 
   /* Video wrapper: Scaled slightly bigger than half (1.2 over 1 ratio) */
@@ -101,15 +102,23 @@ layout: default
 
   /* Custom Harvard Location Styling */
   .thesis-location {
-    color: #3498db; 
+    color: #f39c12; /* Warm gold profile accent color */
     font-weight: 700;
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem; /* Clean layout margin next to image crest */
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+
+  /* Floating Inline University Logo Dimensions */
+  .thesis-uni-logo {
+    height: 22px; 
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .thesis-title {
@@ -122,10 +131,10 @@ layout: default
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
-  /* Tag configuration for keywords layout */
+  /* Tag configuration for keywords layout on top of crimson background */
   .thesis-tags {
     display: flex;
     flex-wrap: wrap;
@@ -133,12 +142,13 @@ layout: default
   }
   
   .thesis-tag {
-    background: rgba(52, 152, 219, 0.15); 
-    color: #3498db;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white pill shapes */
+    color: #ffffff;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
   
   /* Mobile responsiveness: Stack elements vertically on middle/small viewports */
@@ -215,18 +225,19 @@ layout: default
       <!-- Right Side: Text & Info Description Details -->
       <div class="thesis-info">
         
-        <!-- Location Flag -->
+        <!-- Location Flag with Custom PNG Crest Logo -->
         <div class="thesis-location">
-          <i class="fas fa-university"></i> Harvard University
+          <img src="{{ '/assets/images/projects/thesis/harvard-logo.png' | relative_url }}" alt="Harvard Crest" class="thesis-uni-logo"> 
+          Harvard University
         </div>
         
         <!-- Title -->
-        <h3 class="thesis-title">
+        <h3 class="thesis-title" style="color: #ffffff; font-weight: 700;">
           {{ thesis.title | default: "Your Master's Thesis Title Here" }}
         </h3>
         
         <!-- Brief Description -->
-        <p class="thesis-excerpt">
+        <p class="thesis-excerpt" style="color: rgba(255, 255, 255, 0.9);">
           {{ thesis.description | default: "A concise description of your research. Explain the core problem, your mechatronic approach, and the impact of the work conducted." }}
         </p>
         
