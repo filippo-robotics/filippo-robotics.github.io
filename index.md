@@ -2,27 +2,80 @@
 layout: default
 ---
 
+<style>
+  /* Centers the image and text block together */
+  .hero-profile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* Space between picture and text */
+    flex-wrap: wrap; 
+  }
+  
+  /* Styles the profile picture into a circle */
+  .hero-profile-image img {
+    width: 180px; /* Adjust size as needed */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Left-aligns the text since it is next to an image */
+  .hero-profile-layout .hero-info-wrapper {
+    text-align: left;
+  }
+
+  /* Stack them vertically on smaller screens (mobile phones) */
+  @media (max-width: 768px) {
+    .hero-profile-layout {
+      text-align: center;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .hero-profile-layout .hero-info-wrapper {
+      text-align: center;
+    }
+  }
+</style>
+
 <div class="hero-personal">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-info-wrapper">
-        <div class="hero-text">
-           <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-           <p class="hero-title">Robotics & Mechatronics</p>
-        </div>
+      
+      <!-- New Flexbox Container -->
+      <div class="hero-profile-layout">
         
-        <div class="hero-actions">
-          <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
-            About
-          </a>
-           <a href="mailto:{{ site.email }}" class="btn-secondary">
-            Contact
-          </a>
+        <!-- 1. Your Profile Picture -->
+        <div class="hero-profile-image">
+          <!-- Change 'assets/images/profile.jpg' to your actual image path -->
+          <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo">
         </div>
+
+        <!-- 2. Your Existing Text & Buttons -->
+        <div class="hero-info-wrapper">
+          <div class="hero-text">
+             <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
+             <p class="hero-title">Robotics & Mechatronics</p>
+          </div>
+          
+          <div class="hero-actions">
+            <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
+              About
+            </a>
+             <a href="mailto:{{ site.email }}" class="btn-secondary">
+              Contact
+            </a>
+          </div>
+        </div>
+
       </div>
+      <!-- End of Flexbox Container -->
+
     </div>
   </div>
 </div>
+
 
 <div class="projects-showcase">
   <div class="container">
