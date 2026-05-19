@@ -150,6 +150,14 @@ layout: default
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.25);
   }
+
+  /* Ensures the video matches the exact grid box sizing constraint guidelines */
+  .project-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   
   /* Mobile responsiveness: Stack elements vertically on middle/small viewports */
   @media (max-width: 900px) {
@@ -271,9 +279,22 @@ layout: default
     {% assign combined_projects = featured_projects | concat: all_projects %}
     {% assign unique_projects = combined_projects | uniq %}
     {% for project in unique_projects limit: 9 %}
-      <div class="project-card-featured">
+      
+      <!-- Card structure injects play/pause listeners purely on the inverted pendulum item -->
+      <div class="project-card-featured"
+           {% if project.slug == 'inverted-pendulum' %}
+           onmouseover="let v=this.querySelector('video'); if(v) v.play()" 
+           onmouseout="let v=this.querySelector('video'); if(v) v.pause()"
+           {% endif %}>
+        
         <div class="project-media">
-          {% if project.featured_image %}
+          <!-- Checks if project matches our target slug to serve hover video element instead of image template -->
+          {% if project.slug == 'inverted-pendulum' %}
+            <video loop muted playsinline preload="auto" poster="{{ project.featured_image | relative_url }}">
+              <source src="{{ '/assets/images/projects/pendulum/balancing-loop.mp4' | relative_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {% elsif project.featured_image %}
             <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image">
           {% elsif project.models.first %}
             <div class="model-preview-small">
