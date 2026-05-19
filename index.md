@@ -9,7 +9,7 @@ layout: default
     flex-direction: row !important;
     align-items: center;
     justify-content: center;
-    gap: 4rem; /* Spacing between the image and the text block */
+    gap: 2rem; /* Spacing between the image and the text block */
     flex-wrap: nowrap;
   }
   
@@ -19,7 +19,7 @@ layout: default
     height: 280px; 
     object-fit: cover;
     border-radius: 8px;
-    border: 3px solid #3498db; /* Adjust hex code to match your theme's exact light blue */
+    border: 4px solid #3498db; /* Adjust hex code to match your theme's exact light blue */
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
 
@@ -37,7 +37,7 @@ layout: default
     display: flex;
     gap: 1rem;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 
   /* Stack on mobile screens */
