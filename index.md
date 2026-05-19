@@ -15,8 +15,8 @@ layout: default
   
   /* 2. Image: Rectangle with light blue border */
   .hero-profile-image img {
-    width: 220px; 
-    height: 280px; 
+    width: 380px; 
+    height: 300px; 
     object-fit: cover;
     border-radius: 8px;
     border: 5px solid #3498db; /* Adjust hex code to match your theme's exact light blue */
