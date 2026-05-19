@@ -122,13 +122,13 @@ layout: default
   }
 
   .thesis-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 1rem;
   }
 
   .thesis-excerpt {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     opacity: 0.9;
