@@ -19,7 +19,7 @@ gallery:
     file: "/assets/images/projects/pendulum/swingup.mp4"
     description: "LQR controller stabilizing the cart-pole system against manual disturbances."
   - type: "image"
-    file: "/assets/images/projects/pendulum/preview.jpg"
+    file: "/assets/images/projects/pendulum/preview.png"
     description: "System wiring schematic and custom PCB layout."
 ---
 
