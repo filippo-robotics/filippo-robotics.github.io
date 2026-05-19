@@ -6,31 +6,34 @@ layout: default
   /* Centers the image and text block together */
   .hero-profile-layout {
     display: flex;
+    flex-direction: row !important; /* Forces them to stay on the same row */
     align-items: center;
     justify-content: center;
-    gap: 2.5rem; /* Space between picture and text */
-    flex-wrap: wrap; 
+    gap: 3rem; /* Space between picture and text */
+    flex-wrap: nowrap; /* Prevents them from stacking */
   }
   
-  /* Styles the profile picture into a circle */
+  /* Styles the profile picture into a rectangle with a light blue border */
   .hero-profile-image img {
-    width: 180px; /* Adjust size as needed */
-    height: 180px;
-    border-radius: 50%;
+    width: 220px; /* Adjust width as needed */
+    height: 280px; /* Make taller than width for a portrait rectangle */
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px; /* Slightly rounds the sharp corners of the rectangle */
+    border: 5px solid #3498db; /* LIGHT BLUE BORDER - Adjust hex code to match exactly */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
 
   /* Left-aligns the text since it is next to an image */
   .hero-profile-layout .hero-info-wrapper {
     text-align: left;
+    margin: 0; /* Removes any default margins that might push it down */
   }
 
-  /* Stack them vertically on smaller screens (mobile phones) */
-  @media (max-width: 768px) {
+  /* Only stack on actual mobile phone screens */
+  @media (max-width: 600px) {
     .hero-profile-layout {
+      flex-direction: column !important;
       text-align: center;
-      flex-direction: column;
       gap: 1.5rem;
     }
     .hero-profile-layout .hero-info-wrapper {
@@ -43,12 +46,10 @@ layout: default
   <div class="container">
     <div class="hero-content">
       
-      <!-- New Flexbox Container -->
       <div class="hero-profile-layout">
         
         <!-- 1. Your Profile Picture -->
         <div class="hero-profile-image">
-          <!-- Change 'assets/images/profile.jpg' to your actual image path -->
           <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo">
         </div>
 
@@ -70,12 +71,10 @@ layout: default
         </div>
 
       </div>
-      <!-- End of Flexbox Container -->
 
     </div>
   </div>
 </div>
-
 
 <div class="projects-showcase">
   <div class="container">
