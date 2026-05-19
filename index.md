@@ -3,6 +3,99 @@ layout: default
 ---
 
 <style>
+/* MASTER'S THESIS BANNER STYLES */
+  .thesis-card-featured {
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-color-secondary, #1e1e1e); /* Adapts to dark/light mode */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    margin-bottom: 3rem; /* Spacing between this and the 3 smaller projects */
+    text-decoration: none; /* Removes hyperlink underline */
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Makes the whole card lift slightly when hovered */
+  .thesis-card-featured:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
+
+  /* Image takes up 2/3 (roughly 66%) of the width */
+  .thesis-media {
+    flex: 2; 
+    min-height: 350px;
+  }
+  
+  .thesis-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Info block takes up 1/3 (roughly 33%) of the width */
+  .thesis-info {
+    flex: 1; 
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the text vertically */
+  }
+
+  /* Custom Harvard Location Styling */
+  .thesis-location {
+    color: #3498db; /* The light blue color */
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .thesis-title {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .thesis-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  /* Tag styling for keywords */
+  .thesis-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .thesis-tag {
+    background: rgba(52, 152, 219, 0.15); /* Transparent light blue background */
+    color: #3498db;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  /* Mobile responsiveness: Stack image on top, text on bottom */
+  @media (max-width: 900px) {
+    .thesis-card-featured {
+      flex-direction: column;
+    }
+    .thesis-media {
+      min-height: 250px;
+    }
+  }
+
   /* 1. Main container: Image on left, Text block on right */
   .hero-profile-layout {
     display: flex;
@@ -47,6 +140,7 @@ layout: default
       gap: 2rem;
     }
   }
+
 </style>
 
 <div class="hero-personal">
@@ -90,6 +184,43 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and design</p>
     </div>
     
+    <!-- === NEW MASTER'S THESIS BLOCK START === -->
+    <!-- Point the href to the exact markdown file name of your thesis project -->
+    <a href="{{ '/projects/masters-thesis/' | relative_url }}" class="thesis-card-featured">
+      
+      <!-- Left Side: Image (2/3 width) -->
+      <div class="thesis-media">
+         <img src="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}" alt="Master's Thesis Preview">
+      </div>
+      
+      <!-- Right Side: Text & Info (1/3 width) -->
+      <div class="thesis-info">
+         
+         <!-- Location / Harvard Flag -->
+         <div class="thesis-location">
+            <i class="fas fa-university"></i> Harvard University
+         </div>
+         
+         <!-- Title -->
+         <h3 class="thesis-title">Your Master's Thesis Title Here</h3>
+         
+         <!-- Brief Description -->
+         <p class="thesis-excerpt">
+            A concise description of your research. Explain the core problem, your mechatronic approach, and the impact of the work conducted.
+         </p>
+         
+         <!-- Keywords / Tags -->
+         <div class="thesis-tags">
+            <span class="thesis-tag">Robotics</span>
+            <span class="thesis-tag">Control Systems</span>
+            <span class="thesis-tag">Kinematics</span>
+         </div>
+         
+      </div>
+    </a>
+    <!-- === NEW MASTER'S THESIS BLOCK END === -->
+
+    <!-- This is your existing 3-project grid. 
     <div class="projects-grid-featured">
       {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
       {% assign all_projects = site.projects | sort: "date" | reverse %}
