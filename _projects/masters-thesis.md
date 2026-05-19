@@ -1,9 +1,9 @@
 ---
 layout: project
 title: "Simulation-Informed Human-in-the Loop Optimization for Supernumerary Robotic Assistance in Activities of Daily Living"
-description: "My master's thesis research conducted at Harvard University focusing on advanced mechatronic systems."
+description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton project aimed at assisting people with motor impairments and the elderly. My contribution..."
 date: 2026-05-19
-categories: [Robotics, Mechatronics, Computer Vision]
+categories: [Robotics, Biomechanics, Machine Learning, Exoskeletons]
 featured: false # Keep this false so it doesn't accidentally duplicate in the lower 3-project grid!
 
 # The image shown inside the thesis project page

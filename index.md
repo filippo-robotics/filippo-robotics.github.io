@@ -71,7 +71,7 @@ layout: default
   
   .thesis-card-featured:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(165, 28, 48, 0.3); /* Tinted crimson shadow drop */
+    box-shadow: 0 8px 25px rgba(165, 28, 48, 0.45); /* Tinted crimson shadow drop */
     color: #ffffff;
   }
 
@@ -102,9 +102,9 @@ layout: default
 
   /* Custom Harvard Location Styling */
   .thesis-location {
-    color: #f39c12; /* Warm gold profile accent color */
+    color:rgb(246, 169, 44); /* Warm gold profile accent color */
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@ layout: default
 
   /* Floating Inline University Logo Dimensions */
   .thesis-uni-logo {
-    height: 22px; 
+    height: 30px; 
     width: auto;
     display: inline-block;
     vertical-align: middle;
@@ -128,7 +128,7 @@ layout: default
   }
 
   .thesis-excerpt {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     opacity: 0.9;
@@ -180,7 +180,7 @@ layout: default
         <div class="hero-info-wrapper">
           <div class="hero-text">
               <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-              <p class="hero-title">Robotics & Mechatronics</p>
+              <p class="hero-title">Robotics & Mechatronics Engineer</p>
           </div>
           
           <div class="hero-actions">
