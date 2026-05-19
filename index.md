@@ -291,7 +291,7 @@ layout: default
           <!-- Checks if project matches our target slug to serve hover video element instead of image template -->
           {% if project.slug == 'inverted-pendulum' %}
             <video loop muted playsinline preload="auto" poster="{{ project.featured_image | relative_url }}">
-              <source src="{{ '/assets/images/projects/pendulum/balancing-loop.mp4' | relative_url }}" type="video/mp4">
+              <source src="{{ '/assets/images/projects/pendulum/swingup.mp4' | relative_url }}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           {% elsif project.featured_image %}
