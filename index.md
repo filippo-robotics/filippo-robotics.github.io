@@ -5,29 +5,7 @@ layout: default
 <div class="hero-personal">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-info-wrapper hero-split">
-
-  <div class="hero-image">
-    <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
-         alt="Profile"
-         class="hero-avatar">
-  </div>
-
-  <div class="hero-text">
-     <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-     <p class="hero-title">Robotics & Mechatronics</p>
-
-     <div class="hero-actions">
-       <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
-         About
-       </a>
-       <a href="mailto:{{ site.email }}" class="btn-secondary">
-         Contact
-       </a>
-     </div>
-  </div>
-
-</div>
+      <div class="hero-info-wrapper">
         <div class="hero-text">
            <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
            <p class="hero-title">Robotics & Mechatronics</p>
