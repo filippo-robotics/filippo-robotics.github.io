@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Master's Thesis: Autonomous Robotics Research"
+title: "Simulation-informed Human-In-the-Loop Optimization of a Supernumerary Robotic Limb in Activities of Daily Living"
 description: "My master's thesis research conducted at Harvard University focusing on advanced mechatronic systems."
 date: 2026-05-19
 categories: [Robotics, Mechatronics, Computer Vision]
