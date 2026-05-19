@@ -3,41 +3,48 @@ layout: default
 ---
 
 <style>
-  /* Centers the image and text block together */
+  /* 1. Main container: Image on left, Text block on right */
   .hero-profile-layout {
     display: flex;
-    flex-direction: row !important; /* Forces them to stay on the same row */
+    flex-direction: row !important;
     align-items: center;
     justify-content: center;
-    gap: 3rem; /* Space between picture and text */
-    flex-wrap: nowrap; /* Prevents them from stacking */
+    gap: 4rem; /* Spacing between the image and the text block */
+    flex-wrap: nowrap;
   }
   
-  /* Styles the profile picture into a rectangle with a light blue border */
+  /* 2. Image: Rectangle with light blue border */
   .hero-profile-image img {
-    width: 220px; /* Adjust width as needed */
-    height: 280px; /* Make taller than width for a portrait rectangle */
+    width: 220px; 
+    height: 280px; 
     object-fit: cover;
-    border-radius: 8px; /* Slightly rounds the sharp corners of the rectangle */
-    border: 5px solid #3498db; /* LIGHT BLUE BORDER - Adjust hex code to match exactly */
+    border-radius: 8px;
+    border: 5px solid #3498db; /* Adjust hex code to match your theme's exact light blue */
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
 
-  /* Left-aligns the text since it is next to an image */
+  /* 3. Text & Buttons block: Centered relative to the Name */
   .hero-profile-layout .hero-info-wrapper {
-    text-align: left;
-    margin: 0; /* Removes any default margins that might push it down */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the name, subtitle, and buttons with each other */
+    text-align: center;
+    margin: 0;
   }
 
-  /* Only stack on actual mobile phone screens */
+  /* Keeps the buttons side-by-side and spaced evenly */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  /* Stack on mobile screens */
   @media (max-width: 600px) {
     .hero-profile-layout {
       flex-direction: column !important;
-      text-align: center;
-      gap: 1.5rem;
-    }
-    .hero-profile-layout .hero-info-wrapper {
-      text-align: center;
+      gap: 2rem;
     }
   }
 </style>
@@ -48,12 +55,12 @@ layout: default
       
       <div class="hero-profile-layout">
         
-        <!-- 1. Your Profile Picture -->
+        <!-- Profile Picture (Left Side) -->
         <div class="hero-profile-image">
           <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo">
         </div>
 
-        <!-- 2. Your Existing Text & Buttons -->
+        <!-- Text & Buttons Block (Right Side) -->
         <div class="hero-info-wrapper">
           <div class="hero-text">
              <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
