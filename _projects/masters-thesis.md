@@ -9,6 +9,63 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
 ---
 
 <style>
+  /* Premium Light Blue Academic Publication Banner */
+  .publication-notice-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(52, 152, 219, 0.05); /* Soft, translucent light blue */
+    border-left: 4px solid #3498db; /* Signature solid blue indicator */
+    border-radius: 4px 15px 15px 4px; /* Matches 15px card roundness gracefully */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .notice-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(52, 152, 219, 0.12);
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .notice-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .notice-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #3498db;
+  }
+
+  .notice-message {
+    margin: 0 !important; /* Forces layout tracking inside wrapper grids */
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+
+  .notice-message strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* Smooth stacking transformation for mobile viewpoints */
+  @media (max-width: 600px) {
+    .publication-notice-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+  }
   /* Page reset and clean typography for dark mode case study */
   .case-study-wrapper {
     max-width: 1200px;
@@ -236,49 +293,48 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
 
     </div>
 
-    <!-- RIGHT COLUMN: MEDIA PLACEHOLDERS -->
+    <!-- RIGHT COLUMN: MEDIA -->
     <div class="case-study-media">
       
-      <!-- Media Item 1: Complete System / Proto Rendering -->
+      <!-- Media Item 1: Home Page Loop Video Showcase -->
       <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: Complete SRL System Prototype ]</div>
-        <!-- <img src="/assets/images/projects/thesis/hardware-assembly.png" alt="Supernumerary Robotic Limb Hardware Profile"> -->
-        <div class="media-caption">Carbon fiber two-link supernumerary robotic arm integration mounted on the custom back-vest chassis.</div>
+        <video autoplay loop muted playsinline preload="auto" poster="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}">
+          <source src="{{ '/assets/images/projects/thesis/demo.mp4' | relative_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="media-caption">Dynamic system demonstration of the Supernumerary Robotic Limb executing assistive task profiles.</div>
       </div>
 
-      <!-- Media Item 2: End-Effector CAD Closeup -->
+      <!-- Media Item 2: Mechanical and Communication Infrastructure Diagram -->
       <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: PLA-CF Custom 3D Printed Wrist ]</div>
-        <!-- <img src="/assets/images/projects/thesis/wrist-design.png" alt="3D Printed Wrist Rotation Joint CAD"> -->
-        <div class="media-caption">Close-up view of the 3D-printed PLA-CF passive wrist configuration designed to trace natural trajectory lines smoothly.</div>
+        <img src="/assets/images/projects/thesis/system.png" alt="SRL Mechanical Architecture and Embedded Communication Diagram">
+        <div class="media-caption">System architecture mapping the brushless DC motor actuators, sensor network integrations, and workstation communication setup.</div>
       </div>
 
-      <!-- Media Item 3: Simulation Loop Video / Image -->
+      <!-- Media Item 3: Operational Tasks and Kinematic Frames Diagram -->
       <div class="media-item">
-        <div class="media-placeholder">[ Video Placeholder: OpenSim Biomechanical Predictive Model ]</div>
-        <!-- 
-        <video autoplay loop muted playsinline>
-          <source src="/assets/images/projects/thesis/opensim-gait.mp4" type="video/mp4">
-        </video> 
-        -->
-        <div class="media-caption">Musculoskeletal simulation tracking kinematic motion boundaries to extract foundational assistive force curves.</div>
-      </div>
-
-      <!-- Media Item 4: Bayesian Optimization Landscape Plot -->
-      <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: Bayesian Optimization Convergence Profile ]</div>
-        <!-- <img src="/assets/images/projects/thesis/optimization-chart.png" alt="Bayesian Optimization Cost Minimization Curve"> -->
-        <div class="media-caption">Cost-function tracking landscape illustrating safe objective optimization convergence inside 80 interactive sampling steps.</div>
-      </div>
-
-      <!-- Media Item 5: EMG Comparison Metrics Chart -->
-      <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: Muscle Activation Reduction Benchmarks ]</div>
-        <!-- <img src="/assets/images/projects/thesis/emg-results.png" alt="Electromyography Muscle Performance Reductions"> -->
-        <div class="media-caption">Comparative electromyography data charts demonstrating substantial muscle strain reliefs across all target ADL activities.</div>
+        <img src="/assets/images/projects/thesis/tasks.png" alt="Activities of Daily Living Tasks and Kinematic Frame Comparisons">
+        <div class="media-caption">Operational ADL tasks showcasing the structural comparison between the user's reference frame (red) and the SRL reference frame (pink) used for Jacobian calculation.</div>
       </div>
 
     </div>
 
+  </div>
+
+  
+  <!-- PAPERS IN PREPARATION NOTICE BANNER -->
+  <div class="publication-notice-banner">
+    <div class="notice-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    </div>
+    <div class="notice-text-content">
+      <span class="notice-badge">Academic Update</span>
+      <p class="notice-message">
+        Research papers detailing this framework and experimental outcomes are currently <strong>in preparation / undergoing peer review</strong> for submission to <strong>Nature</strong> and <strong>Science</strong> journals.
+      </p>
+    </div>
   </div>
 </div>
