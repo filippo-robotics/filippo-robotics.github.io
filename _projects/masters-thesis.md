@@ -1,71 +1,14 @@
 ---
-layout: project
+layout: default
 title: "Simulation-Informed Human-in-the Loop Optimization for Supernumerary Robotic Assistance in Activities of Daily Living"
-description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton project aimed at assisting people with motor impairments and the elderly. My contribution..."
+description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton project aimed at assisting people with motor impairments and the elderly."
 date: 2026-05-19
 categories: [Robotics, Biomechanics, Machine Learning, Exoskeletons]
-featured: false # Keep this false so it doesn't accidentally duplicate in the lower 3-project grid!
+featured: false
 featured_image: "/assets/images/projects/thesis/featured.jpg"
 ---
 
 <style>
-  /* Premium Light Blue Academic Publication Banner */
-  .publication-notice-banner {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 5rem;
-    padding: 1.5rem 2rem;
-    background: rgba(52, 152, 219, 0.05); /* Soft, translucent light blue */
-    border-left: 4px solid #3498db; /* Signature solid blue indicator */
-    border-radius: 4px 15px 15px 4px; /* Matches 15px card roundness gracefully */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .notice-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(52, 152, 219, 0.12);
-    padding: 0.75rem;
-    border-radius: 10px;
-  }
-
-  .notice-text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .notice-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #3498db;
-  }
-
-  .notice-message {
-    margin: 0 !important; /* Forces layout tracking inside wrapper grids */
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: #e0e0e0;
-  }
-
-  .notice-message strong {
-    color: #ffffff;
-    font-weight: 600;
-  }
-
-  /* Smooth stacking transformation for mobile viewpoints */
-  @media (max-width: 600px) {
-    .publication-notice-banner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem;
-    }
-  }
   /* Page reset and clean typography for dark mode case study */
   .case-study-wrapper {
     max-width: 1200px;
@@ -75,7 +18,7 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
     color: #e0e0e0;
   }
 
-  /* 1. Main Title - Minimal & Bold */
+  /* Main Title - Minimal & Bold */
   .case-study-title {
     font-size: 2.8rem;
     font-weight: 800;
@@ -161,21 +104,6 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
     border-top-right-radius: 13px;
   }
 
-  /* Placeholder Style for items waiting for final media assets */
-  .media-placeholder {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: rgba(52, 152, 219, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3498db;
-    font-weight: 500;
-    border-top-left-radius: 13px;
-    border-top-right-radius: 13px;
-    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
-  }
-
   /* Premium Semi-Transparent Caption Bar */
   .media-caption {
     padding: 1.2rem;
@@ -187,11 +115,68 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
     line-height: 1.5;
   }
 
-  /* Responsive: Stack on smaller screens */
+  /* Premium Light Blue Academic Publication Banner */
+  .publication-notice-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(52, 152, 219, 0.05); /* Soft, translucent light blue */
+    border-left: 4px solid #3498db; /* Signature solid blue indicator */
+    border-radius: 4px 15px 15px 4px; /* Matches 15px card roundness gracefully */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .notice-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(52, 152, 219, 0.12);
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .notice-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .notice-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #3498db;
+  }
+
+  .notice-message {
+    margin: 0 !important;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+
+  .notice-message strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* Responsive: Stack layouts cleanly on mid-to-small devices */
   @media (max-width: 950px) {
     .case-study-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .publication-notice-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
     }
   }
 </style>
@@ -321,6 +306,20 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
 
   </div>
 
-  
- 
+  <!-- PAPERS IN PREPARATION NOTICE BANNER -->
+  <div class="publication-notice-banner">
+    <div class="notice-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    </div>
+    <div class="notice-text-content">
+      <span class="notice-badge">Academic Update</span>
+      <p class="notice-message">
+        Research papers detailing this framework and experimental outcomes are currently <strong>in preparation / undergoing peer review</strong> for submission to <strong>Nature</strong> and <strong>Science</strong> journals.
+      </p>
+    </div>
+  </div>
+
 </div>
