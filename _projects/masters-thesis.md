@@ -5,7 +5,7 @@ description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton p
 date: 2026-05-19
 categories: [Robotics, Biomechanics, Machine Learning, Exoskeletons]
 featured: false
-featured_image: "/assets/images/projects/thesis/featured.jpg"
+featured_image: "/assets/images/projects/thesis/preview.png"
 ---
 
 <style>
@@ -22,11 +22,25 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
   .case-study-title {
     font-size: 2.8rem;
     font-weight: 800;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem; /* Reduced from 3.5rem to pull widget closer */
     color: #ffffff;
     border: none;
     padding: 0;
     line-height: 1.2;
+  }
+
+  /* Premium Light Blue Academic Publication Banner */
+  .publication-notice-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0; /* Reset to 0 since title handles top spacing */
+    margin-bottom: 3rem; /* Adds balanced breathing room above the content grid */
+    padding: 1.5rem 2rem;
+    background: rgba(52, 152, 219, 0.05); /* Soft, translucent light blue */
+    border-left: 4px solid #3498db; /* Signature solid blue indicator */
+    border-radius: 4px 15px 15px 4px; /* Matches 15px card roundness gracefully */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 
   /* 2-Column Layout Grid */
@@ -115,19 +129,6 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
     line-height: 1.5;
   }
 
-  /* Premium Light Blue Academic Publication Banner */
-  .publication-notice-banner {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
-    background: rgba(52, 152, 219, 0.05); /* Soft, translucent light blue */
-    border-left: 4px solid #3498db; /* Signature solid blue indicator */
-    border-radius: 4px 15px 15px 4px; /* Matches 15px card roundness gracefully */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  }
-
   .notice-icon-wrapper {
     display: flex;
     align-items: center;
@@ -185,7 +186,7 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
   
   <h1 class="case-study-title">{{ page.title }}</h1>
 
-    <!-- PAPERS IN PREPARATION NOTICE BANNER -->
+  <!-- PAPERS IN PREPARATION NOTICE BANNER -->
   <div class="publication-notice-banner">
     <div class="notice-icon-wrapper">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -299,7 +300,8 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
       
       <!-- Media Item 1: Home Page Loop Video Showcase -->
       <div class="media-item">
-        <video autoplay loop muted playsinline preload="auto" poster="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}">
+        <!-- Fixed poster path directly routing to the asset image source root -->
+        <video autoplay loop muted playsinline preload="auto" poster="/assets/images/projects/thesis/featured.jpg">
           <source src="{{ '/assets/images/projects/thesis/demo.mp4' | relative_url }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -321,7 +323,5 @@ featured_image: "/assets/images/projects/thesis/featured.jpg"
     </div>
 
   </div>
-
-
 
 </div>
