@@ -18,7 +18,7 @@ permalink: /about/
   .about-me-title {
     font-size: 2.8rem;
     font-weight: 800;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     color: #ffffff;
     border: none;
     padding: 0;
