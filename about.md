@@ -117,7 +117,6 @@ permalink: /about/
     
     <!-- PROFESSIONAL SUMMARY -->
     <section>
-      <h2>Professional Profile</h2>
       <p>
         I am a Mechanical Engineer specializing in Mechatronics and Robotics, graduated from Politecnico di Milano with a final grade of 110/110 (GPA 4.0/4.0). I enjoy working in collaborative environments and have a strong passion for robotics, automation, and intelligent systems engineering.
       </p>
