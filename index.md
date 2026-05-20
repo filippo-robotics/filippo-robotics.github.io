@@ -224,7 +224,7 @@ layout: default
           
           <div class="hero-actions">
             <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
-              About
+              About Me
             </a>
               <a href="mailto:{{ site.email }}" class="btn-secondary">
               Contact
@@ -245,7 +245,7 @@ layout: default
   <div class="container">
     <div class="section-header">
       <h2>Portfolio</h2>
-      <p class="section-subtitle">A curated collection of my research and design</p>
+      <p class="section-subtitle">A curated collection of my research and engineering projects</p>
     </div>
     
     <!-- Subsection Header for Thesis -->
