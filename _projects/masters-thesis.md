@@ -1,10 +1,10 @@
 ---
-layout: default
-title: "Task-Agnostic Supernumerary Robotic Limb (SRL)"
-description: "Addressing the sim-to-real gap in assistive robotics through biomechanical modeling and Human-in-the-Loop Optimization (HILO)."
-date: "09-2025 to 05-2026"
-categories: [Robotics, Biomechanics, OpenSim, Machine Learning]
-featured: true
+layout: project
+title: "Simulation-Informed Human-in-the Loop Optimization for Supernumerary Robotic Assistance in Activities of Daily Living"
+description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton project aimed at assisting people with motor impairments and the elderly. My contribution..."
+date: 2026-05-19
+categories: [Robotics, Biomechanics, Machine Learning, Exoskeletons]
+featured: false # Keep this false so it doesn't accidentally duplicate in the lower 3-project grid!
 featured_image: "/assets/images/projects/thesis/featured.jpg"
 ---
 
