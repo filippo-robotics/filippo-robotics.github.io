@@ -19,7 +19,7 @@ layout: default
   
   /* Image: Rectangle with light blue border */
   .hero-profile-image img {
-    width: 420px; 
+    width: 500px; 
     height: 280px; 
     object-fit: cover;
     border-radius: 8px;
@@ -518,6 +518,7 @@ layout: default
             <div>
               <span class="skill-group-label">Simulation Environments</span>
               <p class="skill-text-plain">Simulink</p>
+              <p class="skill-text-plain">Unity</p>
             </div>
           </div>
         </div>
@@ -551,7 +552,7 @@ layout: default
             </div>
             <div>
               <span class="skill-group-label">Prototyping & Tools</span>
-              <p class="skill-text-plain">Bambulab 3D Printers, Unity</p>
+              <p class="skill-text-plain">Bambulab 3D Printers</p>
             </div>
           </div>
         </div>

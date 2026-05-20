@@ -1,45 +1,183 @@
 <footer class="site-footer">
     <div class="container">
-        <div class="footer-simple">
+        <div class="footer-layout">
+            
+            <!-- Left Side: Professional Profile Branding -->
             <div class="footer-brand">
-                <h3 class="mesgro-title">MESGRO</h3>
-                <div class="mesgro-definition">
-                    <span class="def-highlight">M</span>echanical,
-                    <span class="def-highlight">E</span>lectronics &
-                    <span class="def-highlight">S</span>oftware
-                    <span class="def-highlight">G</span>allery for
-                    <span class="def-highlight">RO</span>botics
+                <h3 class="footer-name">{{ site.author | default: "Your Name" }}</h3>
+                <p class="footer-tagline">Robotics & Mechatronics Engineer</p>
+                <p class="footer-statement">Engineering smart systems from kinematic design to intelligent control.</p>
+            </div>
+
+            <!-- Center Side: Dedicated Professional Channels -->
+            <div class="footer-connections">
+                <h4>Let's Connect</h4>
+                <div class="social-links-minimal">
+                    {% if site.linkedin_username %}
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    {% endif %}
+                    {% if site.email %}
+                    <a href="mailto:{{ site.email }}" aria-label="Email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    {% endif %}
                 </div>
             </div>
 
-            <div class="social-links-center">
-                {% if site.github_username %}
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                {% endif %}
-                {% if site.linkedin_username %}
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                {% endif %}
-                {% if site.twitter_username %}
-                <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                {% endif %}
-                {% if site.email %}
-                <a href="mailto:{{ site.email }}" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                {% endif %}
+            <!-- Right Side: Navigation Quick Links & Copyright -->
+            <div class="footer-meta">
+                <div class="footer-nav-links">
+                    <a href="{{ '/' | relative_url }}">Home</a>
+                    <a href="{{ '/about/' | relative_url }}">About</a>
+                    <a href="{{ '/projects/' | relative_url }}">Portfolio</a>
+                    <a href="{{ '/contact/' | relative_url }}">Contact</a>
+                </div>
+                <div class="footer-credits">
+                    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author | default: "Your Name" }}. All Rights Reserved.</p>
+                </div>
             </div>
 
-            <div class="footer-credits">
-                <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author | default: site.title }}. Built with &hearts; using Jekyll.</p>
-                <p>Designed and developed by <strong>Alejandro Ojeda Olarte</strong></p>
-                <p><a href="https://github.com/aojedao/MESGRO" target="_blank">MESGRO Template</a></p>
-            </div>
         </div>
     </div>
 </footer>
+
+<style>
+  /* ========================================== */
+  /* MINIMALIST & PROFESSIONAL FOOTER STYLES    */
+  /* ========================================== */
+  
+  .site-footer {
+    background: #111111; /* Clean deep slate/black backdrop */
+    padding: 4rem 0 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #8a99ad;
+    font-size: 0.9rem;
+  }
+
+  /* Flexbox structural grid row distribution */
+  .footer-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  /* Left Block: Branding */
+  .footer-brand {
+    flex: 1.5;
+    min-width: 250px;
+  }
+
+  .footer-brand .footer-name {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-brand .footer-tagline {
+    color: #3498db; /* Your theme signature light blue */
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-brand .footer-statement {
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0;
+    color: #8a99ad;
+  }
+
+  /* Center Block: Connections */
+  .footer-connections {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .footer-connections h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .social-links-minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .social-links-minimal a {
+    color: #cccccc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+    font-weight: 500;
+  }
+
+  .social-links-minimal a:hover {
+    color: #3498db;
+  }
+
+  /* Right Block: Links & Metadata Meta */
+  .footer-meta {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 1.5rem;
+  }
+
+  .footer-nav-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .footer-nav-links a {
+    color: #8a99ad;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-nav-links a:hover {
+    color: #ffffff;
+  }
+
+  .footer-credits p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #556273;
+  }
+
+  /* Responsive breakpoints for smaller displays */
+  @media (max-width: 768px) {
+    .footer-layout {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    
+    .footer-meta {
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+
+    .footer-nav-links {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+</style>
