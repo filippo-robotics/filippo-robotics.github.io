@@ -166,7 +166,7 @@ layout: default
   .project-media {
     width: 100%;
     flex-grow: 1; 
-    height: 240px; /* Base structural height */
+    height: 190px; /* Base structural height */
     position: relative;
     overflow: hidden;
   }
