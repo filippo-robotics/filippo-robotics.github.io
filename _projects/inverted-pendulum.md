@@ -7,7 +7,7 @@ categories: [Arduino, Control, MATLAB]
 featured: true   # Forces this project to appear at the very top of your main grid layout
 
 # Static preview backup image for the main directory block
-featured_image: "/assets/images/projects/pendulum/preview.jpg"
+featured_image: "/assets/images/projects/pendulum/preview.png"
 
 github_url: "https://github.com/yourusername/inverted-pendulum"
 demo_url: "https://github.com/yourusername/inverted-pendulum"
