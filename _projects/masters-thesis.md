@@ -1,66 +1,284 @@
 ---
-layout: project
-title: "Simulation-Informed Human-in-the Loop Optimization for Supernumerary Robotic Assistance in Activities of Daily Living"
-description: "I worked in Prof. Patrick Slade’s lab on a robotic exoskeleton project aimed at assisting people with motor impairments and the elderly. My contribution..."
-date: 2026-05-19
-categories: [Robotics, Biomechanics, Machine Learning, Exoskeletons]
-featured: false # Keep this false so it doesn't accidentally duplicate in the lower 3-project grid!
-
-# The image shown inside the thesis project page
+layout: default
+title: "Task-Agnostic Supernumerary Robotic Limb (SRL)"
+description: "Addressing the sim-to-real gap in assistive robotics through biomechanical modeling and Human-in-the-Loop Optimization (HILO)."
+date: "09-2025 to 05-2026"
+categories: [Robotics, Biomechanics, OpenSim, Machine Learning]
+featured: true
 featured_image: "/assets/images/projects/thesis/featured.jpg"
-
-github_url: "https://github.com/yourusername/thesis-repo"
-demo_url: "https://youtu.be/your-thesis-demo"
-
-# If you have a 3D CAD model of your thesis project
-models:
-  - file: "/assets/models/thesis/robot_model.gltf"
-    description: "Full assembly of the mechatronic testing rig"
-
-# If you want to show your circuit diagrams
-schematics:
-  - file: "/assets/schematics/thesis/hardware_circuit.png"
-    description: "Custom PCB layout for sensor data acquisition"
-
-# You can paste an important snippet of your control algorithms here
-code_files:
-  - name: "Trajectory Optimization"
-    file: "trajectory_planner.py"
-    language: "python"
-    download_url: "https://github.com/yourusername/your-repo/blob/main/trajectory_planner.py"
-    content: |
-      import numpy as np
-      
-      def optimize_path(start, goal):
-          # Your thesis mathematical solver code goes here
-          print("Optimizing trajectory...")
-          return True
-
-# Bill of Materials used in your thesis rig
-components:
-  - name: "Microcontroller / FPGA Board"
-    quantity: 1
-    description: "Main controller processing the kinematics loop"
-    link: "https://example.com"
-
-# Gallery for your thesis defense slides, photos in the lab, or performance graphs
-gallery:
-  - type: "video"
-    file: "/assets/images/projects/thesis/demo.mp4"
-    description: "Robot in action - Full demonstration video"
-  - type: "image"
-    file: "/assets/images/projects/thesis/featured.jpg"
-    description: "Close-up profile of the hardware assembly"
 ---
 
-## Thesis Abstract
-Write a summary of your thesis here. What was the core academic or engineering problem you tackled? What were your key contributions or findings?
+<style>
+  /* Page reset and clean typography for dark mode case study */
+  .case-study-wrapper {
+    max-width: 1200px;
+    margin: 8rem auto 4rem auto;
+    padding: 0 2rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #e0e0e0;
+  }
 
-## Methodology & Hardware Architecture
-Describe the physical mechatronic system you built or analyzed. Mention your mechanical design, structural choices, and electronic component selection.
+  /* 1. Main Title - Minimal & Bold */
+  .case-study-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+    color: #ffffff;
+    border: none;
+    padding: 0;
+    line-height: 1.2;
+  }
 
-## Control Algorithms & Software
-Explain the mathematics, physics equations, or programming architecture (like ROS packages, inverse kinematics solvers, or computer vision tracking) you implemented.
+  /* 2-Column Layout Grid */
+  .case-study-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50/50 split */
+    gap: 4rem;
+    align-items: start;
+  }
 
-## Experimental Results
-Detail how the system performed during testing. (If you have data plots or performance graphs, you can talk about them here!)
+  /* LEFT COLUMN: Text Content */
+  .case-study-text section {
+    margin-bottom: 4rem;
+  }
+
+  .case-study-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #3498db; /* Light Blue section divider */
+    padding-bottom: 0.5rem;
+  }
+
+  .case-study-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Classical Paragraph Layout for Specs */
+  .spec-item {
+    margin-bottom: 1.8rem;
+  }
+
+  .spec-title {
+    color: #3498db; /* Light Blue Title */
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block; /* Pushes text underneath like a classical paragraph */
+    margin-bottom: 0.4rem;
+  }
+
+  .spec-desc {
+    margin: 0;
+    color: #cccccc;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  /* RIGHT COLUMN: Media */
+  .case-study-media {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* Premium Media Styling with 15px Rounded Corners & Light Blue Stroke */
+  .media-item {
+    background: transparent;
+    border-radius: 15px; /* Softer, rounded look */
+    overflow: hidden;
+    border: 2px solid #3498db; /* Solid light blue stroke */
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1); 
+  }
+
+  .media-item img, .media-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 13px; /* Prevent image bleed outside border */
+    border-top-right-radius: 13px;
+  }
+
+  /* Placeholder Style for items waiting for final media assets */
+  .media-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(52, 152, 219, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3498db;
+    font-weight: 500;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+  }
+
+  /* Premium Semi-Transparent Caption Bar */
+  .media-caption {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    background: rgba(20, 25, 35, 0.85); /* Deep elegant backdrop */
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Responsive: Stack on smaller screens */
+  @media (max-width: 950px) {
+    .case-study-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<div class="case-study-wrapper">
+  
+  <h1 class="case-study-title">{{ page.title }}</h1>
+
+  <div class="case-study-grid">
+    
+    <!-- LEFT COLUMN: TEXT CONTENT -->
+    <div class="case-study-text">
+      
+      <!-- ABSTRACT & OBJECTIVE -->
+      <section>
+        <h2>Thesis Abstract & Research Objective</h2>
+        <p>
+          This thesis addresses the "sim-to-real gap" in assistive robotics by developing a task-agnostic Supernumerary Robotic Limb (SRL) system. The research objective was to create a framework that combines biomechanical simulations with Human-in-the-Loop Optimization (HILO) to provide personalized assistance for multiple Activities of Daily Living (ADLs), specifically sit-to-stand, stair climbing, and object lifting. The system aims to minimize user fatigue and muscle activation, enhancing autonomy for individuals with mobility impairments.
+        </p>
+      </section>
+
+      <!-- SYSTEM ARCHITECTURE -->
+      <section>
+        <h2>System Architecture & Hardware Design</h2>
+        
+        <div class="spec-item">
+          <span class="spec-title">Mechanical Structure:</span>
+          <p class="spec-desc">The hardware features a custom adjustable vest with a carbon fiber two-link robotic arm. It utilizes two high-torque brushless DC motors (AK70-10 and AK60-6) controlled via a CAN interface.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Sensor Fusion:</span>
+          <p class="spec-desc">A wired IMU provides stable real-time phase estimation, while Delsys EMG sensors measure physiological muscle activity.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">End-Effector Innovation:</span>
+          <p class="spec-desc">A new 3D-printed degree of freedom (wrist rotation) was designed in PLA-CF to allow the gripper to follow natural human motion more smoothly during complex tasks.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Communication Setup:</span>
+          <p class="spec-desc">A Raspberry Pi acts as the onboard computer, coordinating motor control and sensor data via an SSH connection to a host workstation.</p>
+        </div>
+      </section>
+
+      <!-- METHODOLOGY -->
+      <section>
+        <h2>Advanced Methodology: Simulation-Informed HILO</h2>
+        
+        <div class="spec-item">
+          <span class="spec-title">Biomechanical Modeling:</span>
+          <p class="spec-desc">Utilizing OpenCap and OpenSim Moco, personalized musculoskeletal models were generated from unassisted motion data to identify an "initial guess" for assistive force profiles.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Real-time Phase Estimation:</span>
+          <p class="spec-desc">A Support Vector Regression (SVR) model was trained to map kinematic IMU data to a monotonic 0–100% motion phase, enabling precise timing of assistance.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Optimization Framework:</span>
+          <p class="spec-desc">A Bayesian Optimization algorithm iteratively refined five force parameters (peak time, peak force, fall time) based on real-time EMG feedback.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Motion Segmentation:</span>
+          <p class="spec-desc">The Angular Rate Energy Detector (ARED) method was implemented to automatically distinguish active movement from rest intervals.</p>
+        </div>
+      </section>
+
+      <!-- EXPERIMENTAL RESULTS -->
+      <section>
+        <h2>Experimental Results & Validation</h2>
+        
+        <div class="spec-item">
+          <span class="spec-title">Muscle Activation Reduction:</span>
+          <p class="spec-desc">Validation on five participants demonstrated significant average reductions in target muscle activity: -11% for sit-to-stand, -18% for object lifting, and -17% for stair step-up.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Personalization Efficacy:</span>
+          <p class="spec-desc">The results confirmed that optimal assistance parameters vary uniquely by individual, proving that HILO is essential for surpassing the limitations of generalized simulation-based models.</p>
+        </div>
+
+        <div class="spec-item">
+          <span class="spec-title">Stability & Convergence:</span>
+          <p class="spec-desc">The optimization landscape showed a single dominant optimum, with the process typically stabilizing within 80 iterations, reducing experimental time and user fatigue.</p>
+        </div>
+      </section>
+
+      <!-- CONCLUSIONS -->
+      <section>
+        <h2>Academic Conclusions & Future Work</h2>
+        <p>
+          The thesis successfully establishes a generalized pipeline for biomechanically informed robotic assistance that is effective across diverse tasks without mechanical redesign. While current results are promising, future developments will focus on reducing hardware weight to further improve efficiency compared to the "no-exoskeleton" condition. The framework provides a foundation for fully task-agnostic platforms that could eventually support cyclic activities like walking through deep learning-based predictive control.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN: MEDIA PLACEHOLDERS -->
+    <div class="case-study-media">
+      
+      <!-- Media Item 1: Complete System / Proto Rendering -->
+      <div class="media-item">
+        <div class="media-placeholder">[ Image Placeholder: Complete SRL System Prototype ]</div>
+        <!-- <img src="/assets/images/projects/thesis/hardware-assembly.png" alt="Supernumerary Robotic Limb Hardware Profile"> -->
+        <div class="media-caption">Carbon fiber two-link supernumerary robotic arm integration mounted on the custom back-vest chassis.</div>
+      </div>
+
+      <!-- Media Item 2: End-Effector CAD Closeup -->
+      <div class="media-item">
+        <div class="media-placeholder">[ Image Placeholder: PLA-CF Custom 3D Printed Wrist ]</div>
+        <!-- <img src="/assets/images/projects/thesis/wrist-design.png" alt="3D Printed Wrist Rotation Joint CAD"> -->
+        <div class="media-caption">Close-up view of the 3D-printed PLA-CF passive wrist configuration designed to trace natural trajectory lines smoothly.</div>
+      </div>
+
+      <!-- Media Item 3: Simulation Loop Video / Image -->
+      <div class="media-item">
+        <div class="media-placeholder">[ Video Placeholder: OpenSim Biomechanical Predictive Model ]</div>
+        <!-- 
+        <video autoplay loop muted playsinline>
+          <source src="/assets/images/projects/thesis/opensim-gait.mp4" type="video/mp4">
+        </video> 
+        -->
+        <div class="media-caption">Musculoskeletal simulation tracking kinematic motion boundaries to extract foundational assistive force curves.</div>
+      </div>
+
+      <!-- Media Item 4: Bayesian Optimization Landscape Plot -->
+      <div class="media-item">
+        <div class="media-placeholder">[ Image Placeholder: Bayesian Optimization Convergence Profile ]</div>
+        <!-- <img src="/assets/images/projects/thesis/optimization-chart.png" alt="Bayesian Optimization Cost Minimization Curve"> -->
+        <div class="media-caption">Cost-function tracking landscape illustrating safe objective optimization convergence inside 80 interactive sampling steps.</div>
+      </div>
+
+      <!-- Media Item 5: EMG Comparison Metrics Chart -->
+      <div class="media-item">
+        <div class="media-placeholder">[ Image Placeholder: Muscle Activation Reduction Benchmarks ]</div>
+        <!-- <img src="/assets/images/projects/thesis/emg-results.png" alt="Electromyography Muscle Performance Reductions"> -->
+        <div class="media-caption">Comparative electromyography data charts demonstrating substantial muscle strain reliefs across all target ADL activities.</div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

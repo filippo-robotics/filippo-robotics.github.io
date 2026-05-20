@@ -3,7 +3,7 @@ layout: default
 title: "Turtlebot3 Autonomous Driving"
 description: "An autonomous indoor mapping and navigation pipeline using TurtleBot3, gmapping, and optimized sparse A* algorithms."
 date: "01-2026 to 05-2026"
-categories: [Gazebo, Autonomous Navigation, ROS]
+categories: [Gazebo, Autonomous Nav, ROS]
 featured: true
 featured_image: "/assets/images/projects/slam/preview.png"
 ---
