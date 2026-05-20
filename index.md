@@ -19,7 +19,7 @@ layout: default
   
   /* Image: Rectangle with light blue border */
   .hero-profile-image img {
-    width: 420px; 
+    width: 500px; 
     height: 280px; 
     object-fit: cover;
     border-radius: 8px;
@@ -42,6 +42,7 @@ layout: default
     gap: 1rem;
     justify-content: center;
     margin-top: 0.5rem;
+    flex-wrap: wrap; /* Safety fallback for smaller widths */
   }
 
   /* Stack profile section on mobile displays */
@@ -155,7 +156,7 @@ layout: default
   /* FIXES: IMAGE AUTO-STRETCH & TAG WRAPPING  */
   /* ========================================== */
 
-/* Ensure card allows left-right layout stretching equally */
+  /* Ensure card allows left-right layout stretching equally */
   .project-card-featured {
     display: flex;
     flex-direction: column;
@@ -201,21 +202,16 @@ layout: default
   }
 </style>
 
-<!-- ========================================== -->
-<!-- 3. HERO / INTRODUCTION DISPLAY WRAPPER     -->
-<!-- ========================================== -->
 <div class="hero-personal">
   <div class="container">
     <div class="hero-content">
       
       <div class="hero-profile-layout">
         
-        <!-- Profile Picture (Left Side) -->
         <div class="hero-profile-image">
           <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo">
         </div>
 
-        <!-- Text & Buttons Block (Right Side) -->
         <div class="hero-info-wrapper">
           <div class="hero-text">
               <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
@@ -226,8 +222,11 @@ layout: default
             <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
               About Me
             </a>
-            <a href="{{ '/contact/' | relative_url }}" class="btn-secondary"> <!-- Updated Link -->
-                Contact
+            <a href="{{ '/contact/' | relative_url }}" class="btn-secondary">
+              Contact
+            </a>
+            <a href="{{ '/assets/cv.pdf' | relative_url }}" class="btn-secondary" target="_blank">
+              CV
             </a>
           </div>
         </div>
@@ -238,9 +237,6 @@ layout: default
   </div>
 </div>
 
-<!-- ========================================== -->
-<!-- 4. PORTFOLIO SHOWCASE GRID SECTION         -->
-<!-- ========================================== -->
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
@@ -248,15 +244,12 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and engineering projects</p>
     </div>
     
-    <!-- Subsection Header for Thesis -->
     <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Master's Thesis</h3>
 
-    <!-- === DYNAMIC MASTER'S THESIS BANNER ROW === -->
     {% assign thesis = site.projects | where: "slug", "masters-thesis" | first %}
 
     <a href="{{ thesis.url | default: '/projects/masters-thesis/' | relative_url }}" class="thesis-card-featured">
 
-      <!-- Left Side: Autoplay Loop Video (Slightly bigger than half width) -->
       <div class="thesis-media">
           <video autoplay loop muted playsinline preload="auto" poster="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}">
             <source src="{{ '/assets/images/projects/thesis/demo.mp4' | relative_url }}" type="video/mp4">
@@ -264,26 +257,21 @@ layout: default
           </video>
       </div>
 
-      <!-- Right Side: Text & Info Description Details -->
       <div class="thesis-info">
         
-        <!-- Location Flag with Custom PNG Crest Logo -->
         <div class="thesis-location">
           <img src="{{ '/assets/images/projects/thesis/harvard-logo.png' | relative_url }}" alt="Harvard Crest" class="thesis-uni-logo"> 
           Harvard University
         </div>
         
-        <!-- Title -->
         <h3 class="thesis-title" style="color: #ffffff; font-weight: 700; margin-bottom: 1rem;">
           {{ thesis.title | default: "Your Master's Thesis Title Here" }}
         </h3>
         
-        <!-- Brief Description -->
         <p class="thesis-excerpt" style="color: rgba(255, 255, 255, 0.9);">
           {{ thesis.description | default: "A concise description of your research. Explain the core problem, your mechatronic approach, and the impact of the work conducted." }}
         </p>
         
-        <!-- Keywords / Tags -->
         <div class="thesis-tags">
           {% if thesis.categories %}
             {% for category in thesis.categories %}
@@ -298,18 +286,12 @@ layout: default
           
       </div>
     </a>
-    <!-- === END OF MASTER'S THESIS BANNER ROW === -->
-
-    <!-- Subsection Header for Other Projects -->
     <h3 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 600;">Main Academic Projects</h3>
 
-    <!-- STANDARD 3-PROJECT ARCHIVE FEATURED GRID -->
     <div class="projects-grid-featured">
-<!-- Replace that group of 5 lines with these 2 lines: -->
     {% assign unique_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
     {% for project in unique_projects limit: 9 %}
       
-      <!-- Card structure injects play/pause listeners purely on the inverted pendulum item -->
       <div class="project-card-featured"
            {% if project.slug == 'inverted-pendulum' %}
            onmouseover="let v=this.querySelector('video'); if(v) v.play()" 
@@ -317,7 +299,6 @@ layout: default
            {% endif %}>
         
         <div class="project-media">
-          <!-- Checks if project matches our target slug to serve hover video element instead of image template -->
           {% if project.slug == 'inverted-pendulum' %}
             <video loop muted playsinline preload="auto" poster="{{ project.featured_image | relative_url }}">
               <source src="{{ '/assets/images/projects/pendulum/swingup.mp4' | relative_url }}" type="video/mp4">
@@ -397,9 +378,6 @@ layout: default
   </div>
 </div>
 
-<!-- ========================================== -->
-<!-- 5. TECHNICAL EXPERTISE / SKILLS DISPLAY    -->
-<!-- ========================================== -->
 <div class="skills-section">
   <div class="container">
     <div class="skills-content">
