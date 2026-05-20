@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "4DOF Industrial Robotics Design"
-description: "Complete assembly render showing the counterweight system on the vertical prismatic joint, designed to balance gravitational forces."
+description: "Mechanical design, trajectory optimization, and dynamic modeling of a 4DOF industrial manipulator using MATLAB and Simscape."
 date: "03-2025 to 07-2025"
 categories: [Robotics, MATLAB, Simscape]
 featured: true
@@ -208,7 +208,7 @@ featured_image: "/assets/images/projects/robotics/preview.png"
       <!-- Media Item 1: Robot CAD / Assembly Rendering -->
       <div class="media-item">
         <img src="/assets/images/projects/robotics/preview.png" alt="4DOF Robot Structure Assembly">
-        <div class="media-caption">Complete assembly render showing the counterweight system on the vertical prismatic joint, designed to balance gravitational forces.</div>
+        <div class="media-caption">Complete assembly render of the 4 DOF robot.</div>
       </div>
 
       <!-- Media Item 2: Dynamic Simulation Video (Muted & Looping) -->
