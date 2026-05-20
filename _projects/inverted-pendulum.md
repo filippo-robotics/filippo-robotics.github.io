@@ -57,30 +57,20 @@ featured_image: "/assets/images/projects/pendulum/preview.png"
     font-size: 1.05rem;
     line-height: 1.7;
     color: #cccccc;
-    margin-bottom: 1rem;
-  }
-
-  /* Title on Left, Text on Right Layout */
-  .spec-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
     margin-bottom: 1.5rem;
   }
-  
-  @media (min-width: 768px) {
-    .spec-list {
-      grid-template-columns: 220px 1fr;
-      gap: 1.5rem;
-    }
+
+  /* Classical Paragraph Layout for Specs */
+  .spec-item {
+    margin-bottom: 1.8rem;
   }
 
   .spec-title {
-    color: #3498db;
+    color: #3498db; /* Light Blue Title */
     font-weight: 600;
     font-size: 1.1rem;
-    margin: 0;
-    line-height: 1.5;
+    display: block; /* Pushes text underneath like a classical paragraph */
+    margin-bottom: 0.4rem;
   }
 
   .spec-desc {
@@ -90,48 +80,46 @@ featured_image: "/assets/images/projects/pendulum/preview.png"
     font-size: 1.05rem;
   }
 
-  /* RIGHT COLUMN: Media (Sticky to stay visible) */
+  /* RIGHT COLUMN: Media (Scrolls normally with the page) */
   .case-study-media {
-    position: sticky;
-    top: 8rem;
-    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
   }
 
-  /* Premium Media Styling */
+  /* Premium Media Styling with 15px Rounded Corners & Light Blue Stroke */
   .media-item {
     background: transparent;
-    border-radius: 8px;
+    border-radius: 15px; /* Softer, rounded look */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); 
-    border: 1px solid rgba(52, 152, 219, 0.2);
+    border: 2px solid #3498db; /* Solid light blue stroke */
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1); 
   }
 
   .media-item img, .media-item video {
     width: 100%;
     height: auto;
     display: block;
+    border-top-left-radius: 13px; /* Slightly inner radius adjustment to prevent bleed */
+    border-top-right-radius: 13px;
   }
 
-  /* Solid Light Blue Caption Bar */
+  /* Premium Semi-Transparent Caption Bar */
   .media-caption {
-    padding: 1rem 1.2rem;
+    padding: 1.2rem;
     font-size: 0.95rem;
-    color: #ffffff;
-    background: #3498db;
+    color: #e0e0e0;
+    background: rgba(20, 25, 35, 0.85); /* Deep elegant backdrop */
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   /* Responsive: Stack on smaller screens */
   @media (max-width: 950px) {
     .case-study-grid {
       grid-template-columns: 1fr;
-    }
-    .case-study-media {
-      position: static;
+      gap: 2rem;
     }
   }
 </style>
@@ -158,24 +146,24 @@ featured_image: "/assets/images/projects/pendulum/preview.png"
       <section>
         <h2>System Architecture</h2>
         
-        <div class="spec-list">
-          <div class="spec-title">Mechanical Setup:</div>
-          <div class="spec-desc">A motorized cart moving along a horizontal rail featuring two degrees of freedom: horizontal cart position and pendulum angle.</div>
+        <div class="spec-item">
+          <span class="spec-title">Mechanical Setup:</span>
+          <p class="spec-desc">A motorized cart moving along a horizontal rail featuring two degrees of freedom: horizontal cart position and pendulum angle.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">Hardware & Sensors:</div>
-          <div class="spec-desc">A DC motor provides linear driving force via PWM signals, while two high-resolution encoders track cart translation and pendulum rotation.</div>
+        <div class="spec-item">
+          <span class="spec-title">Hardware & Sensors:</span>
+          <p class="spec-desc">A DC motor provides linear driving force via PWM signals, while two high-resolution encoders track cart translation and pendulum rotation.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">Mathematical Model:</div>
-          <div class="spec-desc">Nonlinear equations of motion were derived using Lagrangian energy properties to accurately map system dynamics and friction.</div>
+        <div class="spec-item">
+          <span class="spec-title">Mathematical Model:</span>
+          <p class="spec-desc">Nonlinear equations of motion were derived using Lagrangian energy properties to accurately map system dynamics and friction.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">State-Space Control:</div>
-          <div class="spec-desc">The model was linearized around equilibrium points into a four-variable state-space representation (position, velocity, angle, angular velocity) for real-time digital feedback.</div>
+        <div class="spec-item">
+          <span class="spec-title">State-Space Control:</span>
+          <p class="spec-desc">The model was linearized around equilibrium points into a four-variable state-space representation (position, velocity, angle, angular velocity) for real-time digital feedback.</p>
         </div>
       </section>
 
@@ -183,24 +171,24 @@ featured_image: "/assets/images/projects/pendulum/preview.png"
       <section>
         <h2>Implementation Breakdown</h2>
         
-        <div class="spec-list">
-          <div class="spec-title">Simulation & Modeling:</div>
-          <div class="spec-desc">A Simscape virtual twin allowed risk-free optimization. Physical constants (masses, lengths, friction) were extracted experimentally via free decay oscillations and force interpolation.</div>
+        <div class="spec-item">
+          <span class="spec-title">Simulation & Modeling:</span>
+          <p class="spec-desc">A Simscape virtual twin allowed risk-free optimization. Physical constants (masses, lengths, friction) were extracted experimentally via free decay oscillations and force interpolation.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">Swing-Up & PID Control:</div>
-          <div class="spec-desc">An energy-based swing-up algorithm forces the pendulum from a stable downward position to the unstable upright position, where a PID controller provides initial feedback regulation.</div>
+        <div class="spec-item">
+          <span class="spec-title">Swing-Up & PID Control:</span>
+          <p class="spec-desc">An energy-based swing-up algorithm forces the pendulum from a stable downward position to the unstable upright position, where a PID controller provides initial feedback regulation.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">LQR Control Strategy:</div>
-          <div class="spec-desc">An advanced Linear Quadratic Regulator (LQR) managed the interdependence between system states, calculating optimal gains to minimize a quadratic cost function for stabilization.</div>
+        <div class="spec-item">
+          <span class="spec-title">LQR Control Strategy:</span>
+          <p class="spec-desc">An advanced Linear Quadratic Regulator (LQR) managed the interdependence between system states, calculating optimal gains to minimize a quadratic cost function for stabilization.</p>
         </div>
 
-        <div class="spec-list">
-          <div class="spec-title">Signal Filtering (EKF):</div>
-          <div class="spec-desc">To counteract severe measurement noise and encoder slippage, Low-Pass and Extended Kalman Filters (EKF) were implemented to achieve clean, reliable state estimation.</div>
+        <div class="spec-item">
+          <span class="spec-title">Signal Filtering (EKF):</span>
+          <p class="spec-desc">To counteract severe measurement noise and encoder slippage, Low-Pass and Extended Kalman Filters (EKF) were implemented to achieve clean, reliable state estimation.</p>
         </div>
       </section>
 
