@@ -3,7 +3,7 @@ layout: default
 title: "4DOF Industrial Robotics Design"
 description: "Mechanical design, trajectory optimization, and dynamic modeling of a 4DOF industrial manipulator using MATLAB and Simscape."
 date: "03-2025 to 07-2025"
-categories: [Robotics, MATLAB, Simscape]
+categories: [Robotics, MATLAB, CAD]
 featured: true
 featured_image: "/assets/images/projects/robotics/preview.png"
 ---
