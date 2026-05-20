@@ -3,7 +3,7 @@ layout: default
 title: "Comparative Analysis of Path Planning Algorithms"
 description: "Implementation and benchmarking of A*, RRT, and RRT* path planning algorithms in complex 2D environments."
 date: "09-2025 to 12-2025"
-categories: [ROS, Path Planning, Algorithms]
+categories: [Path Planning, Algorithms, MATLAB]
 featured: false
 featured_image: "/assets/images/projects/planning/preview.png"
 ---

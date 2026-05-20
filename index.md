@@ -155,18 +155,17 @@ layout: default
   /* FIXES: IMAGE AUTO-STRETCH & TAG WRAPPING  */
   /* ========================================== */
 
-  /* Ensure card allows left-right layout stretching equally */
+/* Ensure card allows left-right layout stretching equally */
   .project-card-featured {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Force child elements to fill card vertically */
+    height: 100%; 
   }
 
-  /* Forces the image column container to match vertical height of description column */
+  /* Forces the image column container to a compact, restricted height */
   .project-media {
     width: 100%;
-    flex-grow: 1; 
-    height: 190px; /* Base structural height */
+    height: 180px; /* Kept at your clean, smaller height */
     position: relative;
     overflow: hidden;
   }
@@ -175,11 +174,12 @@ layout: default
   .project-media img, 
   .project-media video,
   .project-media .model-viewer,
-  .project-media .preview-model-small {
-    width: 100%;
+  .project-media .preview-model-small,
+  .project-image { /* Added your explicit image class here */
+    width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    display: block;
+    display: block !important;
   }
 
   /* Keeps multi-tag overflows clean without layout clipping drops */
@@ -305,10 +305,8 @@ layout: default
 
     <!-- STANDARD 3-PROJECT ARCHIVE FEATURED GRID -->
     <div class="projects-grid-featured">
-    {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
-    {% assign all_projects = site.projects | sort: "date" | reverse %}
-    {% assign combined_projects = featured_projects | concat: all_projects %}
-    {% assign unique_projects = combined_projects | uniq %}
+<!-- Replace that group of 5 lines with these 2 lines: -->
+    {% assign unique_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
     {% for project in unique_projects limit: 9 %}
       
       <!-- Card structure injects play/pause listeners purely on the inverted pendulum item -->
