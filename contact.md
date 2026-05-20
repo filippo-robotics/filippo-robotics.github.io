@@ -174,7 +174,7 @@ permalink: /contact/
       
       <div class="contact-form-card">
         <!-- Formspree service acts as the secure action hook endpoint pipeline -->
-        <form action="https://formspree.io/f/filippoandrea.mariani@mail.polimi.it" method="POST">
+        <form action="https://formspree.io/f/mnjrpdzw" method="POST">
           
           <!-- Sender Email -->
           <div class="form-group">
