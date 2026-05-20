@@ -244,7 +244,7 @@ layout: default
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
-      <h2>Portfolio</h2>
+      <h2>Academic Portfolio</h2>
       <p class="section-subtitle">A curated collection of my research and engineering projects</p>
     </div>
     

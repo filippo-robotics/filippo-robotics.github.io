@@ -75,8 +75,34 @@ permalink: /about/
     gap: 2rem;
   }
 
+  /* Side-by-Side Image Gallery Layout at the bottom */
+  .about-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50/50 split matching layouts */
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Premium Image Frame matching your project case studies */
+  .about-gallery-item {
+    background: transparent;
+    border-radius: 15px; /* Softer, rounded look */
+    overflow: hidden;
+    border: 2px solid #3498db; /* Solid light blue stroke */
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
+  }
+
+  .about-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Responsive Adjustments: Stack columns cleanly on mobile devices */
   @media (max-width: 600px) {
-    .bio-split-grid {
+    .bio-split-grid,
+    .about-gallery-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
@@ -93,30 +119,14 @@ permalink: /about/
     <section>
       <h2>Professional Profile</h2>
       <p>
-        I am a Mechanical Engineer specializing in Mechatronics and Robotics, graduated from Politecnico di Milano with a final grade of 110/110 (GPA 4.0/4.0). I am highly motivated, thrive in collaborative team environments, and hold a deep professional passion for robotics and automation engineering fields.
+        I am a Mechanical Engineer specializing in Mechatronics and Robotics, graduated from Politecnico di Milano with a final grade of 110/110 (GPA 4.0/4.0). I enjoy working in collaborative environments and have a strong passion for robotics, automation, and intelligent systems engineering.
       </p>
       <p>
-        My primary technical interests lie in the design and intelligent control of advanced robotic systems, particularly biomedical devices, physical interfaces, and supernumerary exoskeletons engineered to restore and enhance independent autonomy for individuals with impaired mobility.
+        My primary technical interests lie in the design and intelligent control of advanced robotic systems, particularly biomedical devices and exoskeletons engineered to restore and enhance independent autonomy for individuals with impaired mobility.
       </p>
-    </section>
-
-    <!-- EXPERIENCE & RESEARCH HIGHLIGHTS -->
-    <section>
-      <h2>Research & Industry Milestones</h2>
-      
-      <div class="bio-spec-item">
-        <span class="bio-spec-title">Harvard University — Master's Research</span>
-        <p class="bio-spec-desc">
-          Completed my Master's Thesis research inside Prof. Patrick Slade’s laboratory, working directly on an advanced supernumerary robotic exoskeleton. My focus centered on designing and building a Machine Learning-based predictive control framework capable of assisting users across a diverse range of complex activities of daily living (ADLs).
-        </p>
-      </div>
-
-      <div class="bio-spec-item">
-        <span class="bio-spec-title">R4P S.r.l. — Robotics Engineer</span>
-        <p class="bio-spec-desc">
-          Currently working within the research and development division at R4P S.r.l. My day-to-day role involves enhancing complex control system stability loops and automating heavy industrial robotic applications, spanning automated factory production lines to intelligent autonomous mobile configurations.
-        </p>
-      </div>
+      <p>
+        I am also strongly interested in anthropomorphic robotics, autonomous navigation, and the development of complex robotic systems for industrial automation applications.
+      </p>
     </section>
 
     <!-- COMPETENCIES & LANGUAGES -->
@@ -149,6 +159,24 @@ permalink: /about/
       <div class="bio-spec-item">
         <span class="bio-spec-title">Personal Pursuits</span>
         <p class="bio-spec-desc">Certified in basic, intermediate, and advanced levels of professional wine tasting. Outside the lab, I am an avid skier, fly fisherman, and enjoy capturing perspective aerial photography and cinematography utilizing custom drones.</p>
+      </div>
+    </section>
+
+    <!-- SIDE-BY-SIDE IMAGE GALLERY SECTION -->
+    <section>
+      <h2>Gallery</h2>
+      <div class="about-gallery-grid">
+        
+        <!-- Image 1 -->
+        <div class="about-gallery-item">
+          <img src="{{ '/assets/images/aboutme1.png' | relative_url }}" alt="About Me Snapshot 1">
+        </div>
+
+        <!-- Image 2 -->
+        <div class="about-gallery-item">
+          <img src="{{ '/assets/images/aboutme2.png' | relative_url }}" alt="About Me Snapshot 2">
+        </div>
+
       </div>
     </section>
 
