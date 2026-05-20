@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Mechanical design of a 4DOF robot"
-description: "Mechanical design, trajectory optimization, and dynamic modeling of a 4DOF industrial manipulator using MATLAB and Simscape."
+title: "4DOF Industrial Robotics Design"
+description: "Complete assembly render showing the counterweight system on the vertical prismatic joint, designed to balance gravitational forces."
 date: "03-2025 to 07-2025"
-categories: [Robotics, MATLAB, Design]
+categories: [Robotics, MATLAB, Simscape]
 featured: true
 featured_image: "/assets/images/projects/robotics/preview.png"
 ---
@@ -104,21 +104,6 @@ featured_image: "/assets/images/projects/robotics/preview.png"
     border-top-right-radius: 13px;
   }
 
-  /* Placeholder Style for items waiting for final media assets */
-  .media-placeholder {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: rgba(52, 152, 219, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3498db;
-    font-weight: 500;
-    border-top-left-radius: 13px;
-    border-top-right-radius: 13px;
-    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
-  }
-
   /* Premium Semi-Transparent Caption Bar */
   .media-caption {
     padding: 1.2rem;
@@ -153,7 +138,7 @@ featured_image: "/assets/images/projects/robotics/preview.png"
       <section>
         <h2>Project Overview</h2>
         <p>
-          Developed at Politecnico di Milano in collaboration with University of Pavia, this project involves the mechanical design and control of a 4-degree-of-freedom (4DOF) industrial robot. The work encompasses the entire design cycle, including workspace mapping, kinematic and dynamic modeling, and the optimization of trajectories for a specific pick-and-place task involving block manipulation.
+          Developed at the Politecnico di Milano, this project involves the mechanical design and control of a 4-degree-of-freedom (4DOF) industrial robot. The work encompasses the entire design cycle, including workspace mapping, kinematic and dynamic modeling, and the optimization of trajectories for a specific pick-and-place task involving block manipulation.
         </p>
       </section>
 
@@ -217,39 +202,28 @@ featured_image: "/assets/images/projects/robotics/preview.png"
 
     </div>
 
-    <!-- 6. RIGHT COLUMN: MEDIA PLACEHOLDERS -->
+    <!-- 6. RIGHT COLUMN: MEDIA -->
     <div class="case-study-media">
       
       <!-- Media Item 1: Robot CAD / Assembly Rendering -->
       <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: Robot Mechanical Assembly ]</div>
-        <!-- Once ready, replace the line above with: <img src="/assets/images/projects/robotics/cad-model.png" alt="4DOF Robot Structure"> -->
-        <div class="media-caption">Full mechanical assembly of the 4DOF manipulator featuring three revolute joints and an integrated counterweight system.</div>
+        <img src="/assets/images/projects/robotics/preview.png" alt="4DOF Robot Structure Assembly">
+        <div class="media-caption">Complete assembly render showing the counterweight system on the vertical prismatic joint, designed to balance gravitational forces.</div>
       </div>
 
-      <!-- Media Item 2: Trajectory Planning Plots -->
+      <!-- Media Item 2: Dynamic Simulation Video (Muted & Looping) -->
       <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: Trajectory Curves ]</div>
-        <!-- Once ready, replace the line above with: <img src="/assets/images/projects/robotics/trajectory.png" alt="Trajectory Interpolation Curves"> -->
-        <div class="media-caption">Comparison profiles of the Lines and Parabolas (LAP) algorithm versus Cubic Splines during obstacle avoidance routines.</div>
-      </div>
-      
-      <!-- Media Item 3: Dynamic Simulation Video -->
-      <div class="media-item">
-        <div class="media-placeholder">[ Video Placeholder: Simscape Pick and Place ]</div>
-        <!-- Once ready, replace the line above with:
         <video autoplay loop muted playsinline>
-          <source src="/assets/images/projects/robotics/pick-place-sim.mp4" type="video/mp4">
+          <source src="/assets/images/projects/robotics/sim.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video> 
-        -->
-        <div class="media-caption">Real-time Simscape physical twin executing block handling loops and torque limit validations.</div>
+        <div class="media-caption">Simscape simulation of the pick-and-place task, demonstrating obstacle avoidance via smooth LSPB and Spline trajectories.</div>
       </div>
-      
-      <!-- Media Item 4: Motor Performance Verification Curve -->
+
+      <!-- Media Item 3: Workspace Isotropy Plot -->
       <div class="media-item">
-        <div class="media-placeholder">[ Image Placeholder: HG-MR23 Motor Limits ]</div>
-        <!-- Once ready, replace the line above with: <img src="/assets/images/projects/robotics/motor-limits.png" alt="Motor Torque Curves"> -->
-        <div class="media-caption">Analytical motor torque trajectories mapped safely inside the continuous running zones of the HG-MR23 curves.</div>
+        <img src="/assets/images/projects/robotics/isotropy.png" alt="Workspace Isotropy Heatmap">
+        <div class="media-caption">Workspace isotropy index heatmap, verifying optimal kinematic quality and movement fluidity across the robot's entire reach.</div>
       </div>
 
     </div>
