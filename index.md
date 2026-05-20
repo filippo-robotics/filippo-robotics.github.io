@@ -502,6 +502,7 @@ layout: default
             <div>
               <span class="skill-group-label">Vision</span>
               <p class="skill-text-plain">NI Vision Assistant</p>
+              <p class="skill-text-plain">Omron AUTOVISION</p>
             </div>
           </div>
         </div>
@@ -533,6 +534,10 @@ layout: default
               <span class="skill-group-label">Intermediate</span>
               <p class="skill-text-muted">C#</p>
             </div>
+              <div>
+              <span class="skill-group-label">Spreadsheets</span>
+              <p class="skill-text-plain">MS Office Package</p>
+            </div>
           </div>
         </div>
 
@@ -547,10 +552,6 @@ layout: default
             <div>
               <span class="skill-group-label">Prototyping & Tools</span>
               <p class="skill-text-plain">Bambulab 3D Printers, Unity</p>
-            </div>
-            <div>
-              <span class="skill-group-label">Spreadsheets</span>
-              <p class="skill-text-plain">MS Office Package</p>
             </div>
           </div>
         </div>
