@@ -19,7 +19,7 @@ layout: default
   
   /* Image: Rectangle with light blue border */
   .hero-profile-image img {
-    width: 500px; 
+    width: 420px; 
     height: 280px; 
     object-fit: cover;
     border-radius: 8px;
@@ -176,7 +176,7 @@ layout: default
   .project-media video,
   .project-media .model-viewer,
   .project-media .preview-model-small,
-  .project-image { /* Added your explicit image class here */
+  .project-image { 
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -200,18 +200,104 @@ layout: default
       min-height: 250px;
     }
   }
+
+  /* ========================================== */
+  /* 5. NEW TECHNICAL SKILLS DISPLAY STYLES    */
+  /* ========================================== */
+  
+  .skills-section {
+    padding-top: 3rem; /* Reduced from large default padding to pull closer to upper content */
+    padding-bottom: 5rem;
+  }
+
+  .skills-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Clean 4-widget structural column layout */
+    gap: 2.5rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #3498db; /* Minimalist signature blue label heading */
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Clean Plain Text Styling Blocks instead of Pill shapes */
+  .skill-list-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-group-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+
+  .skill-text-plain {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc; /* High scannability plain text output color */
+    margin: 0;
+  }
+
+  /* Dimmed secondary text for differentiating knowledge tiers or groupings */
+  .skill-text-muted {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #8a99ad; 
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr); /* Drops to 2x2 grid configuration on tablets */
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .skills-grid {
+      grid-template-columns: 1fr; /* Stacks completely into a single vertical column flow on mobile */
+      gap: 2rem;
+    }
+  }
 </style>
 
+<!-- ========================================== -->
+<!-- 3. HERO / INTRODUCTION DISPLAY WRAPPER     -->
+<!-- ========================================== -->
 <div class="hero-personal">
   <div class="container">
     <div class="hero-content">
       
       <div class="hero-profile-layout">
         
+        <!-- Profile Picture (Left Side) -->
         <div class="hero-profile-image">
           <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo">
         </div>
 
+        <!-- Text & Buttons Block (Right Side) -->
         <div class="hero-info-wrapper">
           <div class="hero-text">
               <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
@@ -237,6 +323,9 @@ layout: default
   </div>
 </div>
 
+<!-- ========================================== -->
+<!-- 4. PORTFOLIO SHOWCASE GRID SECTION         -->
+<!-- ========================================== -->
 <div class="projects-showcase">
   <div class="container">
     <div class="section-header">
@@ -244,12 +333,15 @@ layout: default
       <p class="section-subtitle">A curated collection of my research and engineering projects</p>
     </div>
     
+    <!-- Subsection Header for Thesis -->
     <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Master's Thesis</h3>
 
+    <!-- === DYNAMIC MASTER'S THESIS BANNER ROW === -->
     {% assign thesis = site.projects | where: "slug", "masters-thesis" | first %}
 
     <a href="{{ thesis.url | default: '/projects/masters-thesis/' | relative_url }}" class="thesis-card-featured">
 
+      <!-- Left Side: Autoplay Loop Video (Slightly bigger than half width) -->
       <div class="thesis-media">
           <video autoplay loop muted playsinline preload="auto" poster="{{ '/assets/images/projects/thesis/featured.jpg' | relative_url }}">
             <source src="{{ '/assets/images/projects/thesis/demo.mp4' | relative_url }}" type="video/mp4">
@@ -257,21 +349,26 @@ layout: default
           </video>
       </div>
 
+      <!-- Right Side: Text & Info Description Details -->
       <div class="thesis-info">
         
+        <!-- Location Flag with Custom PNG Crest Logo -->
         <div class="thesis-location">
           <img src="{{ '/assets/images/projects/thesis/harvard-logo.png' | relative_url }}" alt="Harvard Crest" class="thesis-uni-logo"> 
           Harvard University
         </div>
         
+        <!-- Title -->
         <h3 class="thesis-title" style="color: #ffffff; font-weight: 700; margin-bottom: 1rem;">
           {{ thesis.title | default: "Your Master's Thesis Title Here" }}
         </h3>
         
+        <!-- Brief Description -->
         <p class="thesis-excerpt" style="color: rgba(255, 255, 255, 0.9);">
           {{ thesis.description | default: "A concise description of your research. Explain the core problem, your mechatronic approach, and the impact of the work conducted." }}
         </p>
         
+        <!-- Keywords / Tags -->
         <div class="thesis-tags">
           {% if thesis.categories %}
             {% for category in thesis.categories %}
@@ -286,12 +383,17 @@ layout: default
           
       </div>
     </a>
+    <!-- === END OF MASTER'S THESIS BANNER ROW === -->
+
+    <!-- Subsection Header for Other Projects -->
     <h3 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 600;">Main Academic Projects</h3>
 
+    <!-- STANDARD 3-PROJECT ARCHIVE FEATURED GRID -->
     <div class="projects-grid-featured">
     {% assign unique_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
     {% for project in unique_projects limit: 9 %}
       
+      <!-- Card structure injects play/pause listeners purely on the inverted pendulum item -->
       <div class="project-card-featured"
            {% if project.slug == 'inverted-pendulum' %}
            onmouseover="let v=this.querySelector('video'); if(v) v.play()" 
@@ -299,6 +401,7 @@ layout: default
            {% endif %}>
         
         <div class="project-media">
+          <!-- Checks if project matches our target slug to serve hover video element instead of image template -->
           {% if project.slug == 'inverted-pendulum' %}
             <video loop muted playsinline preload="auto" poster="{{ project.featured_image | relative_url }}">
               <source src="{{ '/assets/images/projects/pendulum/swingup.mp4' | relative_url }}" type="video/mp4">
@@ -378,47 +481,80 @@ layout: default
   </div>
 </div>
 
+<!-- ========================================== -->
+<!-- 5. TECHNICAL SKILLS GRID SECTION           -->
+<!-- ========================================== -->
 <div class="skills-section">
   <div class="container">
     <div class="skills-content">
-      <h2>Technical Expertise</h2>
+      <h2>Technical Skills</h2>
       <div class="skills-grid">
+        
+        <!-- WIDGET 1: ROBOTICS -->
         <div class="skill-category">
-          <h3><i class="fas fa-robot"></i> Robotics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">ROS</span>
-            <span class="skill-tag">Kinematics</span>
-            <span class="skill-tag">Path Planning</span>
-            <span class="skill-tag">SLAM</span>
+          <h3>Robotics</h3>
+          <div class="skill-list-block">
+            <div>
+              <span class="skill-group-label">Frameworks & Simulation</span>
+              <p class="skill-text-plain">RobotStudio ABB</p>
+              <p class="skill-text-muted">ROS (Intermediate)</p>
+            </div>
+            <div>
+              <span class="skill-group-label">Vision</span>
+              <p class="skill-text-plain">NI Vision Assistant</p>
+            </div>
           </div>
         </div>
+
+        <!-- WIDGET 2: AUTOMATION -->
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Electronics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">ESP32</span>
-            <span class="skill-tag">PCB Design</span>
-            <span class="skill-tag">Sensors</span>
+          <h3>Automation</h3>
+          <div class="skill-list-block">
+            <div>
+              <span class="skill-group-label">PLC Architectures</span>
+              <p class="skill-text-plain">Siemens TIA Portal, Sysmac Studio</p>
+            </div>
+            <div>
+              <span class="skill-group-label">Simulation Environments</span>
+              <p class="skill-text-plain">Simulink</p>
+            </div>
           </div>
         </div>
+
+        <!-- WIDGET 3: PROGRAMMING -->
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C/C++</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">JavaScript</span>
+          <h3>Programming</h3>
+          <div class="skill-list-block">
+            <div>
+              <span class="skill-group-label">Proficient</span>
+              <p class="skill-text-plain">C, MATLAB, Python</p>
+            </div>
+            <div>
+              <span class="skill-group-label">Intermediate</span>
+              <p class="skill-text-muted">C#</p>
+            </div>
           </div>
         </div>
+
+        <!-- WIDGET 4: CAD / DESIGN -->
         <div class="skill-category">
-          <h3><i class="fas fa-cube"></i> CAD/Design</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">SolidWorks</span>
-            <span class="skill-tag">Fusion 360</span>
-            <span class="skill-tag">3D Printing</span>
-            <span class="skill-tag">KiCad</span>
+          <h3>CAD / Design</h3>
+          <div class="skill-list-block">
+            <div>
+              <span class="skill-group-label">Mechanical Modelling</span>
+              <p class="skill-text-plain">CATIA V5, Inventor, SolidWorks, Solid Edge</p>
+            </div>
+            <div>
+              <span class="skill-group-label">Prototyping & Tools</span>
+              <p class="skill-text-plain">Bambulab 3D Printers, Unity</p>
+            </div>
+            <div>
+              <span class="skill-group-label">Spreadsheets</span>
+              <p class="skill-text-plain">MS Office Package</p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
