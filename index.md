@@ -151,12 +151,43 @@ layout: default
     border: 1px solid rgba(255, 255, 255, 0.25);
   }
 
-  /* Ensures the video matches the exact grid box sizing constraint guidelines */
-  .project-media video {
+  /* ========================================== */
+  /* FIXES: IMAGE AUTO-STRETCH & TAG WRAPPING  */
+  /* ========================================== */
+
+  /* Ensure card allows left-right layout stretching equally */
+  .project-card-featured {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Force child elements to fill card vertically */
+  }
+
+  /* Forces the image column container to match vertical height of description column */
+  .project-media {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    flex-grow: 1; 
+    height: 240px; /* Base structural height */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Fixes media aspect ratios inside grid layouts */
+  .project-media img, 
+  .project-media video,
+  .project-media .model-viewer,
+  .project-media .preview-model-small {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
     display: block;
+  }
+
+  /* Keeps multi-tag overflows clean without layout clipping drops */
+  .project-categories-small {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
   }
   
   /* Mobile responsiveness: Stack elements vertically on middle/small viewports */
@@ -321,7 +352,7 @@ layout: default
         
         <div class="project-info-featured">
           <div class="project-categories-small">
-            {% for category in project.categories limit:2 %}
+            {% for category in project.categories %}
               <span class="category-tag-small">{{ category }}</span>
             {% endfor %}
           </div>
@@ -330,7 +361,7 @@ layout: default
             <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
           </h3>
           
-          <p class="project-excerpt-small">{{ project.description | truncate: 80 }}</p>
+          <p class="project-excerpt-small">{{ project.description }}</p>
           
           <div class="project-features-small">
             {% if project.models %}

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "4DOF Industrial Robotics Design"
+title: "Mechanical design of a 4DOF robot"
 description: "Mechanical design, trajectory optimization, and dynamic modeling of a 4DOF industrial manipulator using MATLAB and Simscape."
 date: "03-2025 to 07-2025"
-categories: [Robotics, MATLAB, Simscape]
+categories: [Robotics, MATLAB, Design]
 featured: true
 featured_image: "/assets/images/projects/robotics/preview.png"
 ---
@@ -153,7 +153,7 @@ featured_image: "/assets/images/projects/robotics/preview.png"
       <section>
         <h2>Project Overview</h2>
         <p>
-          Developed at the Politecnico di Milano, this project involves the mechanical design and control of a 4-degree-of-freedom (4DOF) industrial robot. The work encompasses the entire design cycle, including workspace mapping, kinematic and dynamic modeling, and the optimization of trajectories for a specific pick-and-place task involving block manipulation.
+          Developed at Politecnico di Milano in collaboration with University of Pavia, this project involves the mechanical design and control of a 4-degree-of-freedom (4DOF) industrial robot. The work encompasses the entire design cycle, including workspace mapping, kinematic and dynamic modeling, and the optimization of trajectories for a specific pick-and-place task involving block manipulation.
         </p>
       </section>
 
